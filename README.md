@@ -596,7 +596,6 @@ plt.show()
 ![Confusion Matrix](LSTM_files/LSTM_18_1.png)
 
 
-
 ```python
 sess.close()
 ```
@@ -613,89 +612,3 @@ It is also possible to see that there was a slight difficulty in doing the diffe
 
 I also tried my code without the gyroscope, using only the 3D accelerometer's 6 features (and not changing the training hyperparameters), and got an accuracy of 87%. In general, gyroscopes consumes more power than accelerometers, so it is preferable to turn them off.
 
-
-## Improvements
-
-In [another open-source repository of mine](https://github.com/guillaume-chevalier/HAR-stacked-residual-bidir-LSTMs), the accuracy is pushed up to nearly 94% using a special deep LSTM architecture which combines the concepts of bidirectional RNNs, residual connections, and stacked cells. This architecture is also tested on another similar activity dataset. It resembles the nice architecture used in "[Google’s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation](https://arxiv.org/pdf/1609.08144.pdf)", without an attention mechanism, and with just the encoder part - as a "many to one" architecture instead of a "many to many" to be adapted to the Human Activity Recognition (HAR) problem. I also worked more on the problem and came up with the [LARNN](https://github.com/guillaume-chevalier/Linear-Attention-Recurrent-Neural-Network), however it's complicated for just a little gain. Thus the current, original activity recognition project is simply better to use for its simplicity. We've also coded a [non-deep learning machine learning pipeline](https://github.com/Neuraxio/Kata-Clean-Machine-Learning-From-Dirty-Code) on the same datasets using classical featurization techniques and older machine learning algorithms.
-
-If you want to learn more about deep learning, I have also built a list of the learning ressources for deep learning which have revealed to be the most useful to me [here](https://github.com/guillaume-chevalier/Awesome-Deep-Learning-Resources). 
-
-
-## References
-
-The [dataset](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) can be found on the UCI Machine Learning Repository:
-
-> Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
-
-
-## Citation
-
-Copyright (c) 2016 Guillaume Chevalier. To cite my code, you can point to the URL of the GitHub repository, for example:
-
-> Guillaume Chevalier, LSTMs for Human Activity Recognition, 2016,
-> https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition
-
-My code is available for free and even for private usage for anyone under the [MIT License](https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition/blob/master/LICENSE), however I ask to cite for using the code.
-
-Here is the BibTeX citation code: 
-```
-@misc{chevalier2016lstms,
-  title={LSTMs for human activity recognition},
-  author={Chevalier, Guillaume},
-  year={2016}
-}
-```
-
-I've also published a second paper, with contributors, regarding a [second iteration as an improvement of this work](https://github.com/guillaume-chevalier/HAR-stacked-residual-bidir-LSTMs), with deeper neural networks. The paper is available on [arXiv](https://arxiv.org/abs/1708.08989). Here is the BibTeX citation code for this newer piece of work based on this project: 
-```
-@article{DBLP:journals/corr/abs-1708-08989,
-  author    = {Yu Zhao and
-               Rennong Yang and
-               Guillaume Chevalier and
-               Maoguo Gong},
-  title     = {Deep Residual Bidir-LSTM for Human Activity Recognition Using Wearable
-               Sensors},
-  journal   = {CoRR},
-  volume    = {abs/1708.08989},
-  year      = {2017},
-  url       = {http://arxiv.org/abs/1708.08989},
-  archivePrefix = {arXiv},
-  eprint    = {1708.08989},
-  timestamp = {Mon, 13 Aug 2018 16:46:48 +0200},
-  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1708-08989},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-```
-
-## Extra links
-
-### Connect with me
-
-- [GitHub](https://github.com/guillaume-chevalier/)
-- [LinkedIn](https://ca.linkedin.com/in/chevalierg)
-- [YouTube](https://www.youtube.com/c/GuillaumeChevalier)
-
-### Liked this project? Did it help you? Leave a [star](https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition/stargazers), [fork](https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition/network/members) and share the love!
-
-This activity recognition project has been seen in:
-
-- [Hacker News 1st page](https://news.ycombinator.com/item?id=13049143)
-- [Awesome TensorFlow](https://github.com/jtoy/awesome-tensorflow#tutorials)
-- [TensorFlow World](https://github.com/astorfi/TensorFlow-World#some-useful-tutorials)
-- And more.
-
----
-
-
-
-```python
-# Let's convert this notebook to a README automatically for the GitHub project's title page:
-!jupyter nbconvert --to markdown LSTM.ipynb
-!mv LSTM.md README.md
-```
-
-    [NbConvertApp] Converting notebook LSTM.ipynb to markdown
-    [NbConvertApp] Support files will be in LSTM_files/
-    [NbConvertApp] Making directory LSTM_files
-    [NbConvertApp] Making directory LSTM_files
-    [NbConvertApp] Writing 38654 bytes to LSTM.md
